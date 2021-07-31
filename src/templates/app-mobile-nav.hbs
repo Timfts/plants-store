@@ -1,0 +1,9 @@
+<nav class="app-mobile-nav" data-component="app-mobile-nav">
+  <div
+    v-repeat="item in itens"
+    v-class="currentItem === item.icon ? 'app-mobile-nav__icon-holder--active' : ''"
+    class="app-mobile-nav__icon-holder"
+  >
+    <ion-icon name="\{{item.icon}}"></ion-icon>
+  </div>
+</nav>

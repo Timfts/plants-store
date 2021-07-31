@@ -1,12 +1,23 @@
-export default function ({ main, elm }) {
-  main((_) => [_start]);
+export default function AppShell({ main, elm, subscribe, msg }) {
+  main((_) => [startRouting, events]);
 
-  function _start() {
+  const events = () => {
+    subscribe("evt:change-route", handleChangeRoute);
+  };
+
+  function startRouting() {
     console.log(elm);
+  }
+
+  /** @param {string} newRoute */
+  function handleChangeRoute(newRoute) {
+    msg.set((state) => {
+      state.currentRoute = newRoute;
+    });
   }
 }
 
 export const model = {
-  name: "text",
-  item: "cebola"
+  theme: "default",
+  currentRoute: "",
 };

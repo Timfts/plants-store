@@ -1,22 +1,39 @@
-export default function ({ main, elm, render }) {
-  main((_) => [_start]);
+export default function AppMobileNav({ main, publish, update, msg }) {
+  main((_) => [events]);
 
-  function _start() {
-    console.log("hello", elm);
+  const events = ({ on }) => {
+    on("click", ".app-mobile-nav__icon-holder", buttonClickHandler);
+  };
+
+  update((props) => {
+    msg.set((state) => (state.currentRoute = props.currentRoute));
+  });
+
+  /** @param {PointerEvent} e */
+  function buttonClickHandler(e) {
+    const element = e.target;
+    if (element instanceof HTMLElement) {
+      const route = element?.dataset?.to;
+      publish("evt:change-route", route);
+    }
   }
 }
 
 export const model = {
+  currentRoute: "",
   currentItem: "heart",
   itens: [
     {
-      icon: "heart",
+      icon: "favorite",
+      route: "",
     },
     {
       icon: "save",
+      route: "library",
     },
     {
       icon: "person",
+      route: "profile",
     },
   ],
 };

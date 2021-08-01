@@ -4,6 +4,7 @@
   height: 100vh;
   position: relative;
   padding-bottom: 44px;
+  display: flex;
 
 
   @include above(tab-port) {

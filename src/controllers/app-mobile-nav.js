@@ -1,3 +1,5 @@
+import MENU_ITEMS from "../constants/menu-items";
+
 export default function AppMobileNav({ main, publish, update, msg }) {
   main((_) => [events]);
 
@@ -21,19 +23,5 @@ export default function AppMobileNav({ main, publish, update, msg }) {
 
 export const model = {
   currentRoute: "",
-  currentItem: "heart",
-  itens: [
-    {
-      icon: "favorite",
-      route: "",
-    },
-    {
-      icon: "save",
-      route: "library",
-    },
-    {
-      icon: "person",
-      route: "profile",
-    },
-  ],
+  items: MENU_ITEMS,
 };

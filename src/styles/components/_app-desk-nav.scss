@@ -1,0 +1,17 @@
+.app-desk-nav {
+  display: none;
+  background-color: white;
+  width: 250px;
+  transition: width 0.2s;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &--collapsed {
+    width: 80px;
+  }
+
+  @include above(tab-port) {
+    display: flex;
+  }
+}

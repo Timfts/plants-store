@@ -5,11 +5,18 @@
 >
   <div class="app-desk-nav__top">
     <button id="lala">toggle</button>
+
     <nav class="app-desk-nav__links">
       <div v-repeat="item in items" class="app-desk-nav__page-link-holder">
-        <a class="app-desk-nav__page-link" href="#\{{item.route}}">
-          <span class="material-icons">\{{item.icon}}</span>
-          <span>\{{item.label}}</span>
+        <a
+          class="app-desk-nav__page-link"
+          href="#\{{item.route}}"
+          v-class="currentRoute === item.route ? 'app-desk-nav__page-link--active' : ''"
+        >
+          <span
+            class="material-icons app-desk-nav__page-link-icon"
+          >\{{item.icon}}</span>
+          <span class="app-desk-nav__page-link-label">\{{item.label}}</span>
         </a>
       </div>
     </nav>

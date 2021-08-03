@@ -3,8 +3,8 @@
     v-repeat="item in items"
     v-class="currentRoute === item.route ? 'app-mobile-nav__icon-holder--active' : ''"
     class="app-mobile-nav__icon-holder"
-    data-to="\{{item.route}}"
+    data-to="@{{item.route}}"
   >
-    <span class="material-icons">\{{item.icon}}</span>
+    <span class="material-icons">@{{item.icon}}</span>
   </div>
 </nav>

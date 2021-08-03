@@ -10,13 +10,13 @@
       <div v-repeat="item in items" class="app-desk-nav__page-link-holder">
         <a
           class="app-desk-nav__page-link"
-          href="#\{{item.route}}"
+          href="#@{{item.route}}"
           v-class="currentRoute === item.route ? 'app-desk-nav__page-link--active' : ''"
         >
           <span
             class="material-icons app-desk-nav__page-link-icon"
-          >\{{item.icon}}</span>
-          <span class="app-desk-nav__page-link-label">\{{item.label}}</span>
+          >@{{item.icon}}</span>
+          <span class="app-desk-nav__page-link-label">@{{item.label}}</span>
         </a>
       </div>
     </nav>

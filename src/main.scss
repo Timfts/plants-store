@@ -12,4 +12,6 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-@import "./styles/components/";
+@import "./fragments/app-shell/";
+@import "./fragments/app-mobile-nav/";
+@import "./fragments/app-desk-nav/";

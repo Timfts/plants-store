@@ -1,4 +1,4 @@
-import MENU_ITEMS from "../constants/menu-items";
+import MENU_ITEMS from "../../constants/menu-items";
 
 export default function AppMobileNav({ main, publish, update, msg }) {
   main((_) => [events]);

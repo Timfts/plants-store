@@ -19,5 +19,5 @@ export default function AppShell({ main, elm, subscribe, msg }) {
 
 export const model = {
   theme: "default",
-  currentRoute: "",
+  currentRoute: "/",
 };

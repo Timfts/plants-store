@@ -10,7 +10,18 @@
   </head>
   <body>
     <module href="./fragments/app-shell/index.html">
-      <p>batata</p>
+      <!-- Main Route -->
+      <module href="./fragments/app-route/index.html" locals='{"route": "/"}'>
+        <p>batata</p>
+      </module>
+      <!-- Library route -->
+      <module href="./fragments/app-route/index.html" locals='{"route": "/library"}'>
+        <p>cebola</p>
+      </module>
+      <!-- Settings route -->
+      <module href="./fragments/app-route/index.html" locals='{"route": "/settings"}'>
+        <p>cebola</p>
+      </module>
     </module>
     <script type="module" src="./main.js"></script>
   </body>

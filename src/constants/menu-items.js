@@ -1,17 +1,17 @@
 const MENU_ITEMS = [
   {
     icon: "favorite",
-    route: "",
+    route: "/",
     label: "Home",
   },
   {
     icon: "save",
-    route: "library",
+    route: "/library",
     label: "Library",
   },
   {
     icon: "person",
-    route: "profile",
+    route: "/profile",
     label: "Profile",
   },
 ];

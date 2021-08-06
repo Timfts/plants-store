@@ -1,6 +1,8 @@
 import MENU_ITEMS from "../../constants/menu-items";
 
-export default function AppMobileNav({ main, publish, update, msg }) {
+export default function AppMobileNav({ main, update, msg, injection }) {
+  const { router } = injection;
+
   main((_) => [events]);
 
   const events = ({ on }) => {
@@ -16,7 +18,7 @@ export default function AppMobileNav({ main, publish, update, msg }) {
     const element = e.target;
     if (element instanceof HTMLElement) {
       const route = element?.dataset?.to;
-      publish("evt:change-route", route);
+      router.navigate(route);
     }
   }
 }

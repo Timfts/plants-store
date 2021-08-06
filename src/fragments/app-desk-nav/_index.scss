@@ -21,6 +21,7 @@
   }
 
   &__page-link-holder {
+    cursor: pointer;
     &:hover {
       background-color: #f1f1f1;
       transition: background-color 0.5s ease;

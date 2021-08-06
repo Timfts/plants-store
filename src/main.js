@@ -9,14 +9,11 @@ import * as AppRoute from "./fragments/app-route";
 const Grapnel = GN.default;
 const router = new Grapnel({ root: "/", pushState: true });
 
-router.get("/*", (route) => {
-  console.log( route);
-});
 
 // register components
-jails.register("app-shell", AppShell);
-jails.register("app-mobile-nav", AppMobileNav);
-jails.register("app-desk-nav", AppDeskNav);
+jails.register("app-shell", AppShell, { router });
+jails.register("app-mobile-nav", AppMobileNav, { router });
+jails.register("app-desk-nav", AppDeskNav, { router });
 jails.register("app-route", AppRoute);
 
 jails.start();

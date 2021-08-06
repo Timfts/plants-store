@@ -1,7 +1,8 @@
 import MENU_ITEMS from "../../constants/menu-items";
 
-export default function AppDeskNav({ main, update, msg, elm }) {
-  main((_) => [onMount, events]);
+export default function AppDeskNav({ main, update, msg, elm, injection }) {
+  const { router } = injection;
+  main((_) => [events]);
 
   update((props) => {
     msg.set((state) => (state.currentRoute = props.currentRoute));
@@ -9,16 +10,23 @@ export default function AppDeskNav({ main, update, msg, elm }) {
 
   const events = ({ on }) => {
     on("click", "#lala", onClickToggleHandler);
+    on("click", ".app-desk-nav__page-link", onClickPageLinkHandler);
   };
-
-  function onMount() {
-    console.log(elm);
-  }
 
   function onClickToggleHandler() {
     msg.set((state) => {
       state.collapsed = !state.collapsed;
     });
+  }
+
+  function onClickPageLinkHandler(e) {
+    const element = e.delegateTarget;
+    const route = element?.dataset?.to;
+    if (route) {
+      const isMenuOpen = !msg.getState().collapsed;
+      router.navigate(route);
+      if (isMenuOpen) onClickToggleHandler();
+    }
   }
 }
 

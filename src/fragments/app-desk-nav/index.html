@@ -8,16 +8,16 @@
 
     <nav class="app-desk-nav__links">
       <div class="app-desk-nav__page-link-holder" v-repeat="item in items">
-        <a
+        <div
           class="app-desk-nav__page-link"
-          href="#@{{item.route}}"
+          data-to="@{{item.route}}"
           v-class="currentRoute === item.route ? 'app-desk-nav__page-link--active' : ''"
         >
           <span class="app-desk-nav__page-link-icon material-icons">
             @{{item.icon}}
           </span>
           <span class="app-desk-nav__page-link-label">@{{item.label}}</span>
-        </a>
+        </div>
       </div>
     </nav>
   </div>

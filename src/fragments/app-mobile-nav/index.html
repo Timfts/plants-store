@@ -1,10 +1,12 @@
-<nav block="app-mobile-nav" data-component="app-mobile-nav">
+<nav class="app-mobile-nav" data-component="app-mobile-nav">
   <div
-    elem="icon-holder"
+    class="app-mobile-nav__icon-holder"
     v-repeat="item in items"
     v-class="currentRoute === item.route ? 'app-mobile-nav__icon-holder--active' : ''"
     data-to="@{{item.route}}"
   >
-    <span elem="icon" class="material-icons">@{{item.icon}}</span>
+    <span class="app-mobile-nav__icon material-icons">
+      @{{item.icon}}
+    </span>
   </div>
 </nav>

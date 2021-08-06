@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import { posthtmlPlugin } from "vite-plugin-posthtml";
 import posthtmlModules from "posthtml-modules";
-import posthtmlBEM from "posthtml-bem";
 
 export default defineConfig({
   root: "src/",
@@ -10,14 +9,7 @@ export default defineConfig({
   },
   plugins: [
     posthtmlPlugin({
-      plugins: [
-        posthtmlModules({ root: "./src", from: "src/index.html" }),
-        posthtmlBEM({
-          elemPrefix: "__",
-          modPrefix: "--",
-          modDlmtr: "-",
-        }),
-      ],
+      plugins: [posthtmlModules({ root: "./src", from: "src/index.html" })],
     }),
     {
       name: "reload-html",

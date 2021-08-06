@@ -1,7 +1,7 @@
 {
   "name": "movinder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web App to find movies",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
@@ -18,11 +18,9 @@
     "popmotion": "^9.4.0"
   },
   "devDependencies": {
-    "posthtml-bem": "^0.2.2",
     "posthtml-modules": "^0.7.4",
     "sass": "^1.37.0",
     "vite": "^2.4.4",
-    "vite-plugin-handlebars": "^1.6.0",
     "vite-plugin-posthtml": "0.0.3"
   }
 }

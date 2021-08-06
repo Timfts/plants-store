@@ -1,26 +1,26 @@
 <aside
-  block="app-desk-nav"
+  class="app-desk-nav"
   data-component="app-desk-nav"
   v-class="css.collapsed"
 >
-  <div elem="top">
+  <div class="app-desk-nav__top">
     <button id="lala">toggle</button>
 
-    <nav elem="links">
-      <div elem="page-link-holder" v-repeat="item in items">
+    <nav class="app-desk-nav__links">
+      <div class="app-desk-nav__page-link-holder" v-repeat="item in items">
         <a
-          elem="page-link"
+          class="app-desk-nav__page-link"
           href="#@{{item.route}}"
           v-class="currentRoute === item.route ? 'app-desk-nav__page-link--active' : ''"
         >
-          <span elem="page-link-icon" class="material-icons"
-            >@{{item.icon}}</span
-          >
-          <span elem="page-link-label">@{{item.label}}</span>
+          <span class="app-desk-nav__page-link-icon material-icons">
+            @{{item.icon}}
+          </span>
+          <span class="app-desk-nav__page-link-label">@{{item.label}}</span>
         </a>
       </div>
     </nav>
   </div>
 
-  <div elem="bottom">bottom</div>
+  <div class="app-desk-nav__bottom">bottom</div>
 </aside>

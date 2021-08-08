@@ -1,8 +1,8 @@
 export default function AppShell({ main, msg, injection }) {
   const { router } = injection;
-  main((_) => [routes]);
+  main((_) => [routesEvents]);
 
-  const routes = () => {
+  const routesEvents = () => {
     router.get("/*", (payload) => {
       const route = payload?.params?.[0];
       const formatted = route ? `/${route}` : "/";

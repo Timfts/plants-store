@@ -1,1 +1,6 @@
-@import "./styles/base/"
+// core
+@import "styles";
+
+// fragments
+@import "fragments/common/container/";
+@import "fragments/sections/Hero/";

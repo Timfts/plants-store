@@ -1,0 +1,9 @@
+.section-hero {
+  width:100%;
+  height:100vh;
+  background-color:aquamarine;
+
+  @include above(phone){
+    height: 62.5vh;
+  }
+}

@@ -2,25 +2,68 @@
   width: 100%;
   height: 100vh;
   background-color: var(--green-10);
+  position: relative;
 
-  @include above(phone) {
+  @include above(sm) {
     height: 62.5vh;
   }
 
   &__content {
     padding-top: 39px;
 
-    @include above(phone) {
+    @include above(sm) {
       padding-top: 61px;
     }
   }
 
   &__mobile-decor {
-    height:100px;
-    width:100px;
-    background-image: url("/static/images/leaves/mobile-leaves.png");
-    @include above(phone) {
-      /* display: none; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    @include above(sm) {
+      display: none;
     }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+
+      // request mobile image only on mobile
+      @include below(sm) {
+        background-image: url("/static/images/leaves/mobile-leaves.png");
+      }
+    }
+
+    &::before {
+      transform: translateY(35%);
+      animation: mobilePlantsTranslA ease-out 1s forwards;
+    }
+
+    &::after {
+      animation: mobilePlantsTranslB ease-in-out 1.2s forwards;
+    }
+  }
+}
+
+@keyframes mobilePlantsTranslA {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobilePlantsTranslB {
+  100% {
+    transform: translateY(-330px);
   }
 }

@@ -1,26 +1,86 @@
-
-
-@mixin above($breakpoint){
-  @if $breakpoint == phone {
-    @media (min-width: 600px) {
+@mixin above($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: 480px) {
       @content;
     }
   }
 
-  @if $breakpoint == tab-port {
-    @media (min-width: 900px){
+  @if $breakpoint == sm {
+    @media (min-width: 480px) {
       @content;
     }
   }
 
-  @if $breakpoint == tab-land {
-    @media (min-width: 1200px) {
+  @if $breakpoint == m {
+    @media (min-width: 768px) {
       @content;
     }
   }
 
-  @if $breakpoint == big-desk {
-    @media (min-width: 1800px) {
+  @if $breakpoint == l {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == ll {
+    @media (min-width: 1248px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xl {
+    @media (min-width: 1366px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == hd {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  }
+}
+
+@mixin below($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == sm {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == m {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == l {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == ll {
+    @media (max-width: 1248px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xl {
+    @media (max-width: 1366px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == hd {
+    @media (max-width: 1920px) {
       @content;
     }
   }

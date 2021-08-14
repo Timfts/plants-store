@@ -4,7 +4,7 @@ import posthtmlModules from "posthtml-modules";
 
 export default defineConfig({
   root: "src/",
-  publicDir: "static/",
+  publicDir: "public/",
   build: {
     outDir: "../dist",
   },

@@ -1,9 +1,26 @@
 .section-hero {
-  width:100%;
-  height:100vh;
-  background-color:aquamarine;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--green-10);
 
-  @include above(phone){
+  @include above(phone) {
     height: 62.5vh;
+  }
+
+  &__content {
+    padding-top: 39px;
+
+    @include above(phone) {
+      padding-top: 61px;
+    }
+  }
+
+  &__mobile-decor {
+    height:100px;
+    width:100px;
+    background-image: url("/static/images/leaves/mobile-leaves.png");
+    @include above(phone) {
+      /* display: none; */
+    }
   }
 }

@@ -35,7 +35,6 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
       background-repeat: no-repeat;
       background-size: 100% auto;
 
@@ -46,11 +45,15 @@
     }
 
     &::before {
-      transform: translateY(35%);
+      height: 65%;
+      transform: translateY(30%);
+      background-position: bottom center;
       animation: mobilePlantsTranslA ease-out 1s forwards;
     }
 
     &::after {
+      height: 100%;
+      transform: translateY(-10%) scaleY(-1) rotate(180deg);
       animation: mobilePlantsTranslB ease-in-out 1.2s forwards;
     }
   }
@@ -64,6 +67,6 @@
 
 @keyframes mobilePlantsTranslB {
   100% {
-    transform: translateY(-330px);
+    transform: translateY(-30%) scaleY(-1) rotate(180deg);
   }
 }

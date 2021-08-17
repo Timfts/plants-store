@@ -11,7 +11,7 @@
 
   &__content {
     padding-top: 39px;
-    z-index: 1;
+    z-index: 3;
 
     @include above(sm) {
       padding-top: 61px;
@@ -84,30 +84,68 @@
       width: 100%;
       height: 100%;
       z-index: -1;
+    }
+  }
 
-      &::before,
-      &::after {
-        position: absolute;
-        content: "";
-        display: block;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        top: 0;
+  &__desk-plant-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: 0;
+      z-index: 2;
+    }
+
+    &::before {
+      background-position: right center;
+      width: 57%;
+      left: 0;
+      @include above(sm) {
+        background-image: url("/static/images/leaves/left-leaves.png");
       }
+    }
+
+    &::after {
+      background-position: left center;
+      width: 20%;
+      right: 0;
+      @include above(sm) {
+        background-image: url("/static/images/leaves/right-leaves.png");
+      }
+    }
+
+    &--layer-one {
+      z-index: 2;
 
       &::before {
-        width: 57%;
-        background-image: url("/static/images/leaves/left-leaves.png");
-        background-position: right center;
-        left: 0;
+        animation: desktopPlantsTranslC 1.8s ease-out forwards;
       }
 
       &::after {
-        width: 20%;
-        right: 0;
-        background-image: url("/static/images/leaves/right-leaves.png");
-        background-position: left center;
+        animation: desktopPlantsTranslD 1.8s ease-out forwards;
+      }
+    }
+
+    &--layer-two {
+      z-index: 1;
+      &::before {
+        transform: translateX(50%);
+        animation: desktopPlantsTranslA 1.5s ease-in-out forwards;
+      }
+
+      &::after {
+        transform: translateX(-80%);
+        animation: desktopPlantsTranslB 1.5s ease-in-out forwards;
       }
     }
   }
@@ -117,6 +155,7 @@
     position: absolute;
     left: 57%;
     max-width: 335px;
+    min-width: 250px;
     top: 50%;
     transform: translateY(-50%);
     height: 90%;
@@ -136,5 +175,37 @@
 @keyframes mobilePlantsTranslB {
   100% {
     transform: translateY(-30%) scaleY(-1) rotate(180deg);
+  }
+}
+
+@keyframes desktopPlantsTranslA {
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+@keyframes desktopPlantsTranslB {
+  100% {
+    transform: translateX(10%);
+  }
+}
+
+@keyframes desktopPlantsTranslC {
+  70% {
+    transform: translateX(-5%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes desktopPlantsTranslD {
+  70% {
+    transform: translateX(5%);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }

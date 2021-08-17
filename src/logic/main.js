@@ -1,7 +1,5 @@
-import { elementController } from "./core";
+import bodyController from "./controllers/bodyController";
+import heroController from "./controllers/sections/heroController"
 
-const HeroSectionController = elementController("hero-section", ({ root }) => {
-  console.log(root);
-});
-
-HeroSectionController();
+bodyController();
+heroController();

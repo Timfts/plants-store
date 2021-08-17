@@ -8,17 +8,20 @@ function elementController(fragmentName, builderFunction) {
     throw new TypeError("fragment name is required");
   }
 
-  const elementInstancesNodes = document.querySelectorAll(
-    `[data-fragment=${fragmentName}]`
-  ) || [];
+  const elementInstancesNodes =
+    document.querySelectorAll(`[data-fragment=${fragmentName}]`) || [];
 
-  const elementInstances = Array.from(elementInstancesNodes)
+  const elementInstances = Array.from(elementInstancesNodes);
 
   return () => {
-    elementInstances.forEach(element => {
-      builderFunction({root: element})
-    })
-  }
+    elementInstances.forEach((element) => {
+      /** @type {import("./types").ControllerEventHandler}  */
+      function on(eventName, handler) {
+        element.addEventListener(eventName, handler);
+      }
+      builderFunction({ root: element, on });
+    });
+  };
 }
 
 export default elementController;

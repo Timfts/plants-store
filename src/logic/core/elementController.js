@@ -8,6 +8,7 @@ function elementController(fragmentName, builderFunction) {
     throw new TypeError("fragment name is required");
   }
 
+  /** @type {NodeListOf.<HTMLElement>} */
   const elementInstancesNodes =
     document.querySelectorAll(`[data-fragment=${fragmentName}]`) || [];
 

@@ -1,10 +1,10 @@
 interface IBuilderFunctionArgs {
-  root: Element;
+  root: HTMLElement;
   on: ControllerEventHandler;
 }
 export type BuilderFuncion = (args: IBuilderFunctionArgs) => void;
 
 export type ControllerEventHandler = (
   eventName: string,
-  eventHandler: EventListenerOrEventListenerObject
+  eventHandler: (...any) => any
 ) => void;

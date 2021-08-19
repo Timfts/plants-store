@@ -4,6 +4,7 @@
   background-color: var(--green-10);
   position: relative;
   z-index: 0;
+  color: var(--white);
 
   @include above(sm) {
     height: 62.5vh;
@@ -163,8 +164,40 @@
 
   &__desktop-person {
     width: 100%;
-    transition: transform .2s ease;
+    transition: transform 0.2s ease;
     transform: translate(var(--mouse-x, 0px), var(--mouse-y, 0px));
+  }
+
+  &__heading {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48.76px;
+    margin-top: 35px;
+    display: block;
+
+    @include above(sm) {
+      font-size: 70px;
+      line-height: 85.33px;
+      margin-top: 47.48px;
+    }
+  }
+
+  &__heading-line-holder {
+    display: block;
+    overflow: hidden;
+
+    span {
+      display: block;
+      transform: translateY(100%);
+    }
+
+    @for $i from 1 to 4 {
+      &:nth-child(#{$i}) {
+        span {
+          animation: headingTranslation 0.7s ease-out forwards calc(#{$i} * .25s);
+        }
+      }
+    }
   }
 }
 
@@ -209,5 +242,11 @@
 
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes headingTranslation {
+  100% {
+    transform: translateY(0);
   }
 }

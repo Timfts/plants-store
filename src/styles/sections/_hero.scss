@@ -1,3 +1,5 @@
+$desk-second-plants-layer-delay: 0.4s;
+
 .section-hero {
   width: 100%;
   height: 100vh;
@@ -141,12 +143,14 @@
       z-index: 1;
       &::before {
         transform: translateX(50%);
-        animation: desktopPlantsTranslA 1.5s ease-in-out forwards;
+        animation: desktopPlantsTranslA 1.5s ease-in-out forwards
+          $desk-second-plants-layer-delay;
       }
 
       &::after {
-        transform: translateX(-80%);
-        animation: desktopPlantsTranslB 1.5s ease-in-out forwards;
+        transform: translateX(-70%);
+        animation: desktopPlantsTranslB 1.5s ease-in-out forwards
+          $desk-second-plants-layer-delay;
       }
     }
   }
@@ -194,10 +198,20 @@
     @for $i from 1 to 4 {
       &:nth-child(#{$i}) {
         span {
-          animation: headingTranslation 0.7s ease-out forwards calc(#{$i} * .25s);
+          animation: headingTranslation
+            0.7s
+            ease-out
+            forwards
+            calc(#{$i} * 0.25s);
         }
       }
     }
+  }
+
+  &__icon-holder {
+    color: var(--white);
+    width: 40px;
+    height: 40px;
   }
 }
 

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <module href="fragments/common/meta.html"></module>
+    {{> common/meta }}
     <title>Greenthumb</title>
-    <module href="fragments/common/third-party.html"></module>
+    {{> common/third-party }}
     <link rel="stylesheet" href="./styles/main.scss" />
   </head>
   <body data-fragment="body">
-    <module href="fragments/common/templates.html"></module>
-    <module href="fragments/common/icons-sprite.html"></module>
-    <module href="fragments/sections/hero.html"></module>
+    {{> common/templates test="cebola" }}
+    {{> common/icons-sprite}}
+    <!--   
+    
+    <module href="fragments/sections/hero.html"></module> -->
 
     <script type="module" src="./logic/main.js"></script>
   </body>

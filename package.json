@@ -13,7 +13,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "ionicons": "^5.5.2",
-    "popmotion": "^9.4.0"
+    "popmotion": "^9.4.0",
+    "vite-plugin-handlebars": "^1.6.0"
   },
   "devDependencies": {
     "posthtml-modules": "^0.7.4",

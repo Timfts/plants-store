@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
-import { posthtmlPlugin } from "vite-plugin-posthtml";
-import posthtmlModules from "posthtml-modules";
+
+import handlebars from "vite-plugin-handlebars";
+import { resolve } from 'path';
 
 export default defineConfig({
   root: "src/",
@@ -8,21 +9,7 @@ export default defineConfig({
   build: {
     outDir: "../dist",
   },
-  plugins: [
-    posthtmlPlugin({
-      plugins: [posthtmlModules({ root: "./src", from: "src/index.html" })],
-    }),
-    {
-      name: "reload-html",
-      async handleHotUpdate({ server, file }) {
-        if (file.endsWith(".html")) {
-          server.ws.send({
-            type: "full-reload",
-          });
-
-          return [];
-        }
-      },
-    },
-  ],
+  plugins: [handlebars({
+    partialDirectory: resolve(__dirname, 'src/fragments'),
+  })],
 });

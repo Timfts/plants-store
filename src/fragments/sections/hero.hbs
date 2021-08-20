@@ -28,22 +28,17 @@
 
   <!-- Text content -->
   <div class="section-hero__content">
-    <module href="../common/container.html">
-      <module href="../common/logo.html"></module>
+    {{#> common/container}}
+      {{> common/logo}}
       <h1 class="section-hero__heading">
-        <span class="section-hero__heading-line-holder"
-          ><span>Find your</span></span
-        >
-        <span class="section-hero__heading-line-holder"
-          ><span>next green</span></span
-        >
-        <span class="section-hero__heading-line-holder"
-          ><span>friend</span></span
-        >
+        <span class="section-hero__heading-line-holder"><span>Find your</span></span>
+        <span class="section-hero__heading-line-holder"><span>next green</span></span>
+        <span class="section-hero__heading-line-holder"><span
+          >friend</span></span>
       </h1>
       <div class="section-hero__icon-holder">
-        <module href="../common/icon.html" locals='{"icon":"arrow"}'></module>
+        {{> common/icon icon="arrow"}}
       </div>
-    </module>
+    {{/common/container}}
   </div>
 </section>

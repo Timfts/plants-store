@@ -20,7 +20,15 @@ function elementController(fragmentName, builderFunction) {
       function on(eventName, handler) {
         element.addEventListener(eventName, handler);
       }
-      builderFunction({ root: element, on });
+
+      function query(queryString, all = false) {
+        if (all) {
+          return element.querySelectorAll(queryString);
+        } else {
+          return element.querySelector(queryString);
+        }
+      }
+      builderFunction({ root: element, on, query });
     });
   };
 }

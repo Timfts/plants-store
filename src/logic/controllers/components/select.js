@@ -1,0 +1,54 @@
+import { elementController } from "../../core";
+
+export default elementController("select", ({ on, root, query }) => {
+  const virtualOptionClass = "app-select__virtual-option";
+  const nativeSelect = query(".app-select__select-input");
+  const virtualOptionsHolder = query(".app-select__custom-options");
+
+  on("click", (e) => {
+    handleSelectOption(e);
+  });
+
+  on("focus", () => {
+    console.log("focused")
+  })
+
+  on("blur", () => {
+    console.log("cenoura")
+  })
+
+  hydrateVirtualOptions();
+
+  function hydrateVirtualOptions() {
+    if (nativeSelect instanceof HTMLElement) {
+      const options = nativeSelect.children;
+      const itensArray = Array.from(options);
+      const htmlExcerpt = itensArray
+        .map((option) =>
+          option instanceof HTMLOptionElement
+            ? `<li class="${virtualOptionClass}" data-value="${option.value}">${option.innerHTML}</li>`
+            : ""
+        )
+        .filter((string) => !!string)
+        .join("\n");
+
+      if (virtualOptionsHolder instanceof HTMLElement) {
+        virtualOptionsHolder.innerHTML = htmlExcerpt;
+      }
+    }
+  }
+
+  /** @param {MouseEvent} e */
+  function handleSelectOption(e) {
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    const elementClasses = Array.from(target.classList);
+    const isOption = elementClasses.includes(virtualOptionClass);
+    if (!isOption) return;
+    const optionValue = target.dataset.value;
+    if (nativeSelect instanceof HTMLSelectElement) {
+      nativeSelect.value = String(optionValue);
+    }
+  }
+});

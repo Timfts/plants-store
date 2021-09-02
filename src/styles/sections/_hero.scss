@@ -55,12 +55,19 @@ $desk-second-plants-layer-delay: 0.4s;
       height: 65%;
       transform: translateY(30%);
       background-position: bottom center;
-      animation: mobilePlantsTranslA ease-out 1s forwards;
     }
 
     &::after {
       height: 100%;
       transform: translateY(-10%) scaleY(-1) rotate(180deg);
+    }
+  }
+
+  &--animate &__mobile-decor {
+    &::before {
+      animation: mobilePlantsTranslA ease-out 1s forwards;
+    }
+    &::after {
       animation: mobilePlantsTranslB ease-in-out 1.2s forwards;
     }
   }
@@ -126,32 +133,37 @@ $desk-second-plants-layer-delay: 0.4s;
         background-image: url("/static/images/leaves/right-leaves.png");
       }
     }
+  }
 
-    &--layer-one {
-      z-index: 2;
+  &__desk-plant-bg--layer-one {
+    z-index: 2;
+  }
 
-      &::before {
-        animation: desktopPlantsTranslC 1.8s ease-out forwards;
-      }
-
-      &::after {
-        animation: desktopPlantsTranslD 1.8s ease-out forwards;
-      }
+  &--animate &__desk-plant-bg--layer-one {
+    &::before {
+      animation: desktopPlantsTranslC 1.8s ease-out forwards;
     }
 
-    &--layer-two {
-      z-index: 1;
-      &::before {
-        transform: translateX(50%);
-        animation: desktopPlantsTranslA 1.5s ease-in-out forwards
-          $desk-second-plants-layer-delay;
-      }
+    &::after {
+      animation: desktopPlantsTranslD 1.8s ease-out forwards;
+    }
+  }
 
-      &::after {
-        transform: translateX(-70%);
-        animation: desktopPlantsTranslB 1.5s ease-in-out forwards
-          $desk-second-plants-layer-delay;
-      }
+  &__desk-plant-bg--layer-two {
+    z-index: 1;
+  }
+
+  &--animate &__desk-plant-bg--layer-two {
+    &::before {
+      transform: translateX(50%);
+      animation: desktopPlantsTranslA 1.5s ease-in-out forwards
+        $desk-second-plants-layer-delay;
+    }
+
+    &::after {
+      transform: translateX(-70%);
+      animation: desktopPlantsTranslB 1.5s ease-in-out forwards
+        $desk-second-plants-layer-delay;
     }
   }
 
@@ -194,7 +206,9 @@ $desk-second-plants-layer-delay: 0.4s;
       display: block;
       transform: translateY(100%);
     }
+  }
 
+  &--animate &__heading-line-holder {
     @for $i from 1 to 4 {
       &:nth-child(#{$i}) {
         span {

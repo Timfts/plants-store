@@ -1,8 +1,14 @@
 import { isMobile } from "../../helpers/screen";
 import { elementController } from "../../core";
 
-export default elementController("hero-section", ({ root, on }) => {
+export default elementController("section-hero", ({ root, on }) => {
   on("mousemove", parallaxHandler);
+
+  window.addEventListener("load", setAnimation)
+
+  function setAnimation(){
+    root.classList.add("section-hero--animate")
+  }
 
   /** @param {MouseEvent} e */
   function parallaxHandler(e) {

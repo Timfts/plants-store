@@ -1,6 +1,6 @@
 import { elementController } from "../../core";
 
-export default elementController("select", ({ on, root, query }) => {
+export default elementController("select", ({ on, root, query, emit }) => {
   const virtualOptionClass = "app-select__virtual-option";
   const nativeSelect = query(".app-select__select-input");
   const virtualOptionsHolder = query(".app-select__custom-options");
@@ -8,14 +8,6 @@ export default elementController("select", ({ on, root, query }) => {
   on("click", (e) => {
     handleSelectOption(e);
   });
-
-  on("focus", () => {
-    console.log("focused")
-  })
-
-  on("blur", () => {
-    console.log("cenoura")
-  })
 
   hydrateVirtualOptions();
 
@@ -48,7 +40,10 @@ export default elementController("select", ({ on, root, query }) => {
     if (!isOption) return;
     const optionValue = target.dataset.value;
     if (nativeSelect instanceof HTMLSelectElement) {
-      nativeSelect.value = String(optionValue);
+      const newValue = String(optionValue);
+      const fieldSlug = root?.dataset?.fieldSlug;
+      nativeSelect.value = newValue;
+      emit("selectChange", { slug: fieldSlug, value: newValue });
     }
   }
 });

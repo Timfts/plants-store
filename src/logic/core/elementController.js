@@ -21,14 +21,25 @@ function elementController(fragmentName, builderFunction) {
         element.addEventListener(eventName, handler);
       }
 
-      function query(queryString, all = false) {
-        if (all) {
-          return element.querySelectorAll(queryString);
-        } else {
-          return element.querySelector(queryString);
-        }
+      /** @type {import("./types").Queryfunction} */
+      function query(queryString) {
+        return element.querySelector(queryString);
       }
-      builderFunction({ root: element, on, query });
+
+      /** @returns {NodeListOf.<HTMLElement>} */
+      function queryAll(queryString) {
+        return element.querySelectorAll(queryString);
+      }
+
+      function emit(eventName, payload = {}) {
+        const event = new CustomEvent(eventName, {
+          bubbles: true,
+          detail: { ...payload },
+        });
+        element.dispatchEvent(event);
+      }
+
+      builderFunction({ root: element, on, query, queryAll, emit });
     });
   };
 }

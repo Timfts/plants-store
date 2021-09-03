@@ -84,6 +84,11 @@ $desk-second-plants-layer-delay: 0.4s;
     width: 85%;
     height: auto;
     z-index: 1;
+    opacity: 0;
+  }
+
+  &--animate &__mobile-person {
+    opacity: 1;
   }
 
   &__desktop-decor {
@@ -194,6 +199,11 @@ $desk-second-plants-layer-delay: 0.4s;
     width: 100%;
     transition: transform 0.2s ease;
     transform: translate(var(--mouse-x, 0px), var(--mouse-y, 0px));
+    opacity: 0;
+  }
+
+  &--animate &__desktop-person {
+    opacity: 1;
   }
 
   &__heading {
@@ -244,7 +254,7 @@ $desk-second-plants-layer-delay: 0.4s;
     overflow-y: hidden;
 
     &:hover {
-      animation:arrowHoverAnimation .8s ease infinite;
+      animation: arrowHoverAnimation 0.8s ease infinite;
     }
 
     @include above(sm) {

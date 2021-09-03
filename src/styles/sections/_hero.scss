@@ -1,4 +1,5 @@
-$desk-second-plants-layer-delay: 0.4s;
+$desk-first-plants-layer-delay: 0.8s;
+$desk-second-plants-layer-delay: 1s;
 
 .section-hero {
   width: 100%;
@@ -149,11 +150,13 @@ $desk-second-plants-layer-delay: 0.4s;
 
   &--animate &__desk-plant-bg--layer-one {
     &::before {
-      animation: desktopPlantsTranslC 1.8s ease-out forwards;
+      animation: desktopPlantsTranslC 1.8s ease-out forwards
+        $desk-first-plants-layer-delay;
     }
 
     &::after {
-      animation: desktopPlantsTranslD 1.8s ease-out forwards;
+      animation: desktopPlantsTranslD 1.8s ease-out forwards
+        $desk-first-plants-layer-delay;
     }
   }
 

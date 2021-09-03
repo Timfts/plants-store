@@ -243,6 +243,10 @@ $desk-second-plants-layer-delay: 0.4s;
     margin-top: 16px;
     overflow-y: hidden;
 
+    &:hover {
+      animation:arrowHoverAnimation .8s ease infinite;
+    }
+
     @include above(sm) {
       margin-top: 20px;
       height: 39px;
@@ -258,6 +262,16 @@ $desk-second-plants-layer-delay: 0.4s;
   &--animate &__icon-holder svg {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes arrowHoverAnimation {
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
 

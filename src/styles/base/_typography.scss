@@ -12,6 +12,11 @@
   font-style: bold;
 }
 
+::selection {
+  background-color: var(--green-60);
+  color:var(--white);
+}
+
 body {
   font-family: Montserrat;
   font-weight: 300;

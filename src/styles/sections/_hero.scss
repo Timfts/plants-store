@@ -7,9 +7,10 @@ $desk-second-plants-layer-delay: 0.4s;
   position: relative;
   z-index: 0;
   color: var(--white);
+  overflow: hidden;
 
   @include above(sm) {
-    height: 62.5vh;
+    height: 64vh;
   }
 
   &__content {
@@ -17,7 +18,7 @@ $desk-second-plants-layer-delay: 0.4s;
     z-index: 3;
 
     @include above(sm) {
-      padding-top: 61px;
+      padding-top: 6vh;
     }
   }
 
@@ -55,20 +56,22 @@ $desk-second-plants-layer-delay: 0.4s;
       height: 65%;
       transform: translateY(30%);
       background-position: bottom center;
+      transition: transform ease-out 1s;
     }
 
     &::after {
       height: 100%;
       transform: translateY(-10%) scaleY(-1) rotate(180deg);
+      transition: transform ease-in-out 1.2s;
     }
   }
 
   &--animate &__mobile-decor {
     &::before {
-      animation: mobilePlantsTranslA ease-out 1s forwards;
+      transform: translateY(0);
     }
     &::after {
-      animation: mobilePlantsTranslB ease-in-out 1.2s forwards;
+      transform: translateY(-30%) scaleY(-1) rotate(180deg);
     }
   }
 
@@ -151,19 +154,28 @@ $desk-second-plants-layer-delay: 0.4s;
 
   &__desk-plant-bg--layer-two {
     z-index: 1;
-  }
 
-  &--animate &__desk-plant-bg--layer-two {
+    &::before,
+    &::after {
+      transition: transform 1.5s ease-in-out $desk-second-plants-layer-delay;
+    }
+
     &::before {
       transform: translateX(50%);
-      animation: desktopPlantsTranslA 1.5s ease-in-out forwards
-        $desk-second-plants-layer-delay;
     }
 
     &::after {
       transform: translateX(-70%);
-      animation: desktopPlantsTranslB 1.5s ease-in-out forwards
-        $desk-second-plants-layer-delay;
+    }
+  }
+
+  &--animate &__desk-plant-bg--layer-two {
+    &::before {
+      transform: translateX(-20%);
+    }
+
+    &::after {
+      transform: translateX(10%);
     }
   }
 
@@ -194,7 +206,7 @@ $desk-second-plants-layer-delay: 0.4s;
     @include above(sm) {
       font-size: 70px;
       line-height: 85.33px;
-      margin-top: 47.48px;
+      margin-top: 5vh;
     }
   }
 
@@ -224,32 +236,28 @@ $desk-second-plants-layer-delay: 0.4s;
 
   &__icon-holder {
     color: var(--white);
+    height: 50px;
     width: 40px;
-    height: 40px;
-  }
-}
+    cursor: pointer;
+    position: relative;
+    margin-top: 16px;
+    overflow-y: hidden;
 
-@keyframes mobilePlantsTranslA {
-  100% {
+    @include above(sm) {
+      margin-top: 20px;
+      height: 39px;
+      width: 35px;
+    }
+
+    svg {
+      transform: translateY(100%);
+      opacity: 0;
+      transition: transform 0.5s ease 1.2s, opacity 0.5s ease 1.2s;
+    }
+  }
+  &--animate &__icon-holder svg {
     transform: translateY(0);
-  }
-}
-
-@keyframes mobilePlantsTranslB {
-  100% {
-    transform: translateY(-30%) scaleY(-1) rotate(180deg);
-  }
-}
-
-@keyframes desktopPlantsTranslA {
-  100% {
-    transform: translateX(-20%);
-  }
-}
-
-@keyframes desktopPlantsTranslB {
-  100% {
-    transform: translateX(10%);
+    opacity: 1;
   }
 }
 

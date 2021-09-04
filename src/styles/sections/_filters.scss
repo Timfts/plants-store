@@ -1,0 +1,5 @@
+.section-filters {
+  @include above(sm) {
+    padding: 53px 0;
+  }
+}

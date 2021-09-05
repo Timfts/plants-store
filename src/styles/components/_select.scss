@@ -11,6 +11,7 @@ $select-border-radius: 19px;
   cursor: pointer;
   color: var(--gray-one);
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   &--open {
     border-bottom: 1px solid transparent;

@@ -255,6 +255,7 @@ $desk-second-plants-layer-delay: 1s;
     position: relative;
     margin-top: 16px;
     overflow-y: hidden;
+    -webkit-tap-highlight-color: transparent;
 
     &:hover {
       animation: arrowHoverAnimation 0.8s ease infinite;

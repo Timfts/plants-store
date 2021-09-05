@@ -1,5 +1,6 @@
 .section-filters {
   background-color: var(--white);
+  padding: 38px 0;
 
   @include above(sm) {
     padding: 53px 0;

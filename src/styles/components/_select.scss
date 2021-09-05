@@ -25,6 +25,8 @@ $select-border-radius: 19px;
 
   &__label {
     line-height: 27px;
+    display: block;
+    cursor: pointer;
   }
 
   &__custom-options {
@@ -38,6 +40,8 @@ $select-border-radius: 19px;
     border: 1px solid var(--gray-one);
     border-top: none;
     border-radius: 0 0 $select-border-radius $select-border-radius;
+    background-color: var(--white);
+    z-index: 1;
   }
   &--open &__custom-options {
     visibility: visible;

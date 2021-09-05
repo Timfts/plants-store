@@ -1,8 +1,8 @@
 <div class="app-select" data-fragment="select" tabindex="0" data-field-slug="{{fieldSlug}}">
-  <select class="app-select__select-input" name="{{name}}">
+  <select class="app-select__select-input" id="app-select-{{fieldSlug}}" name="{{name}}">
     {{> @partial-block }}
   </select>
-  <div class="app-select__label">Select..</div>
+  <label for="app-select-{{fieldSlug}}" class="app-select__label">Select..</label>
   <div class="app-select__arrow"></div>
   <ul class="app-select__custom-options"></ul>
 </div>

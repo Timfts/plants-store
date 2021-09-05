@@ -19,8 +19,8 @@
 />
  -->
     
-    <script type="module" crossorigin src="/assets/index.a721533a.js"></script>
-    <link rel="stylesheet" href="/assets/index.662911e7.css">
+    <script type="module" crossorigin src="/assets/index.cd63eedc.js"></script>
+    <link rel="stylesheet" href="/assets/index.200fbcb4.css">
   </head>
   <body data-fragment="body">
     <template id="plant-template">
@@ -214,24 +214,66 @@
     </div>  </div>
     </section>    <section class="section-filters" data-fragment="section-filters">
     <div class="container">
-          <div class="section-selectors__content">
-      <div class="app-select" data-fragment="select" tabindex="0" data-field-slug="first">
-        <select class="app-select__select-input" id="app-select-first" name="first">
-                  <option value="teste">teste</option>
-                  <option value="testse">tesase</option>
+          <ul class="section-filters__filters-list">
+            <!-- First selector -->
+            <li class="section-filters__filter">
+              <div class="section-filters__filter-info">
+                <img
+                  class="section-filters__mascot"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAAAXNSR0IArs4c6QAADU1JREFUeNrtnAlwFUUax4fCY1mlVtnizMp9KGiQOwcJSYBA8uYFlENQFl0WwQ2sIEqxCko4dHE5wpFwiAnCLquiHCEBEvISDoU1oEiQRBTEKtmtda0EVMjx5si3/Z+vesKDSIJAMrHeV/VV93T3TF7/8v++6enMi+I0M3Nc0w2P+v2lfbEtFL9d2/Rs1wtGjlrmh+WH5YdVhflhOc78sPyw/LBqZKQoDfywajQZdYGR61pHFHFbfYVFuXGhusf1/C2HZea6JonJkPA19RGW1xPT1fCo/zNz3af5F36LTfOo0zAhI1dNwQ+sL7DooNpTXPtHPUc9TplDmsj2WgIGhblX3kxg5Hmks+FRR1K6+9c3FdQB1wNQlACVT9lqa6W2TQKzc5hDDTkKoIwc19fVgKolYMhhDjSZo4xc9xnyDPxtdeMdncOIlAZa3p+7G/mvjaQzqZPNU2tm0+eJc838eTPpyIxx9GXqIDqV0uqGc9TBmKaKU0zjuyRp2WpqdcDo64RfmYXL4ysKE7MqCpZdrPhiLZmfryIzfyFVfPY6VRQsJVOUln88k8zjc6kif8E587OFa/Ss2HAArgkovuupn1qh5zSTIal7XPOqnEBhUhv6InlDReHyHwQkMk8KGCcEIAEKx7I04cdfkf0SGtdPLhJQE05R/vyJVJB890+BckSOqs5Mj3vyJU9cc58PXzCzhVmwYqlQzA9SMVALlAQoAIQ2CakC9WMvWl7x6VwB6gUej3a0oe+Tl0Q5+6xxaOI45Qor2ze0rZGj7nREjroeo+MJ0WbBynMi1Fg5KAHk85WsptMplcDgH00BGAFJtAkg5jEBBSEqji2AH8Wjn8cdfprMI9PIyJuWQYeeaabUZxN56DUrlPIXCLUsAiCoA8dQlQwxlOxHprOKjk4DFNsBC4CMD58SfTPJEJCM3EcASkB8WZwzS/QnfEO5sf2U+mZE1MAsXDUfQBjOQnbOU2iDmgAIykFIQTlQF2BxfhLhZ4fg0elkfPAEzgNIbgM4KCvvWTIOPUV83vOXqGB+D6U+GeXPW1JxYgHJ0AMEuFAa1AU4SNToxyQBDirhSUs1YQyAsEtA6JNtDPHgE6hbMI0DjwvVTSqmfeMilPpg9PHsZ5GgfWCxomSYYcKAg7pM5BxieVPQxo5Qg3LYAQMlw0E9L162s9r+NZWM/aMZ3P7H/kNbggMUJxud3RBWceLVCvtuVrgUkFDiGHkHqpJhJqHhmCdvqWM0FAZ4UklwgAFMtDEkC8oY6zxj3yMC2jgyckcIf4yMnLGk5w47SQkOfQQj2tLQPPHqV1ARQAAOFpeo27kGwDBRMXnUoSCoh6HYdzc4AEEpaANA6WjjkGOwopwAtfG5ojQ8caRnuEjfPkBcd/zLihONzqybjZCzQpDvdICBxI7Vt1QE2pDMAQ+TkxNFPxTCbTkq6lJlKHGMcQzQFxzGc5ntJj0zloyMKNE3ioy9MV7yuNorTrKLYo1T8cWab8WaiSHxXYyBcEhKxQCGncgNhFCOyqAqS8BACZegUGK5gDo7j5FgUaKfy73DyMgS0HYOIiM9crXiJKPTKVPkeglgsKZCHXc5O9ygECvvTAdEgMMk0VY5YcDyBcWldFafDyCGMxQqIl0A0nNGiTAU9T2DSd8RjnAsKdkb10pxiomkfQpALn6ymM5/vIzOH5pD5w/PpfMHZ9L5A9Op2DORijPHUvHeP3CZNY6Kdo8Sx+OpePdIKtoZi5L79oyioozhVLzrUbRL57Z0t2gfLttQRzuc27bFUNH2IVSUFkdFfw+hkkwX6Wkid+WMnqM4weh0ak9+TImn2VNUGhgVRgMj+3MZEYI6HHW4rFfjPuNqfm5kmM/x/KdDSH8viLT1XY4qTjDzyHN/haoQhrOmjqaQkGDH+JwJwWSIcNQ2dDMupnas+/0s49hLeXJHYFb8CPuDdu7cidq3b1+tP/xwd/ucka5QH48bGmr39erVkzp06FCtd+rUkYKD+1nnvDx5AOn/6CFgdSft/X5TlDo0fgY89lIp1k1YJ82aFI0PKT5sEN15552EIdW4mGB7G8jFPS6fhP7f7bE+8Gtyvdtvv52CghjWnPF9Sd/Wn7TNPcjY3Ktu74rY7sXaB3c+keQFrBhnwXpSwHq7t6UuPT0iQ6lL0/MmBONhVi4PZj2jOgvWRKGq1G6kbexO+uYeBcqNWmlWbD8tOyaopl6SOaSlrazDfxyIEOT1Uzy9MvXnKKuDDaQsiyFJ/35XJawuXTpfN6y543sLZfURoHqS9tZD3yiX2XdbRt19PfOmHLWvgr/KCKcae7Z7hK0sT9xgC5QAhseN9Qlx9uTuuuuuGk3uwQe7WeOHDQ2t8uep0SFWf2BgYI2uh58rP8O7r4QClKUu/Y3O53z/lugehutfh+uKlu0O0rNcITV1+jCusQ3r6PRQufIGtMLNbvuDdupUfdg0atTIHp/4fGSVH3Lu5P72mMaNG1d7zXbt2trjTy/uShruhqldybuu8ykfWAcfbYn51Ng9arByIybAtZIPt8ZB3gV48RkORTiWBnfccUeVk2rSpAn17dvbGjd0YCidez+2Slj/3hpD0VGWusT4PtZ5DRo0uOp6DRs2pDZtWts/e+GTPUnfGIhFKeetpLZ7lbo2Y/+IErldAi/NUmnM8Aj5oeUkfVzmFDhW2h+sjpZw8Ix3VT1jyWCKCGdgcJx/5TWRJ2X/1LH96cKGXuRd34U04d7kdqStapOs1LUZ+x49KjbdfNTwXfowen1aZLUr7JGu/nRorQ2qSmDy+FjqEBrOi9Sf9LDQIJo3oR9d2NTPCj3tnT7kXdvR8vLktpOVujZz/+hkuX1y+QRxnPfGEFr+QiQ992Q4TR4TZvmUJ8IoIT6Cdi4eLO52LrlrcO3kuida+GAq3jaIdi4ZRPMmhtCUsaF8zdEhNOP3obQsvh99ti7cylG6gKStbE3eJc1JE6qCl/+taSelrk3PiYliOCMsQDpvl2ALBdskVU8e/XAGBb9KVTq3yethDG+7ZETBrTY9LZz03bwVA0BG2gDSNgWSLnKUV8BCroKqtLcCzypOMWNn5Fc8UZ8J+gLidgnkSpAA4NuPOuAIlyX3cTvG4BxtSxDp20I5kb/dByVAsaLW30/exFbkTWrjjC0aXm+pr+HDIxz1vcNZVR63z8RR9zm+DExplotK0gdbZenuofZxyY4oy/WtoYAFJUFFgAQVIS8BDrcJaJpQEQChBCwvkntiQKl3Sav7FacYZUU303cN+pFVAI9GeFSqhtsABiWO7XaA+9PjYaQOCiJ1SAic61F97OOv3ggmXaoLCmS3Qk7bGIhnPzjA8CIUSR2wkLdSu21VnGZmrnseQOnpUTIn4TcOGJigT+hIpWFHAPDGxMmFZ9X+ZQorSt8qxqdZ+Ukmcrm5J46tlTocqkJyR7tZvqxpR8VpRtsj7tHSIr6UAABFhg5UJgEClFQZwOK4bFc0laVFUtm2cCrdEkqlaVFUtiOSSsUxXAMoXCc9EpDscGRQ9yMckcjZV94HRVkq87710OuKU03f1GOAnhEpQwbAMDEoS4YckrHsR56R48SYSKlAKA4Kwli0YT8KYxFyUA5CDmGGOmCxC0AMqRXXFzc/eyHhnnsUJ5uRHrEKk5dhCAissAGAgjsWJos6Q6x0KEXClVC5XZwjwEBVUI88BjwoCOAACXXkK8C6oL3ZtX68IGKkdF0nJsJqAIDUbhyaqDMkhvdOb8BhB1RxDveFI1EDKu6EnJs2BQIgg+G7nVQS6nIRijZTXxEwUKkvRgnKbd73glMMMTnt7d6cfAU4gyEACI6hDgBAGAkVDgAsqAWweLdgU3eAASCZn5C00SbXUraiAKt8cbMfvYtbjFacbHghn1+N9AVWvrJ1ItQFFWlQCu5iwkUbh5JwUef1ErcDLqBxP0IO0ADpTX4glpB81AR1rWr9rbGqXVxVr0zquXjH1QEGUHh92vC4M6rqN3f0j9f+2et7mYwFGLjcG4eCoBaGCAUixFBCZajL8wAKgKAqCUmGYVKbT7zLWnRTqjAt2zUByxQtR92k1KXZ75l7XCcoy93uJ7eulza5T9/40DYoB6tq+87GjyPYH5cgJBiMAxA5BmDQjzaM5cS+LOCSd1XrvxBRg2r+/cEsALvGe/q18xUP3aOerOnr03rmkDBvUttMoZZyAQsAGAarBioCEHb0yXx1+ToK7YmtvtXWtl96aXmz5tfznn6dfHXG/opHtnr653y7ihJbPmBueHCmtqZjnnd1R91bqSgGxMqyEzoWmtrygCLvioB3vUuajjy/6N7fKNdtCEl1fK1+dYb2DW+L0MN3YRjUjdl3yU3vLlvafKCe1GaGd22HxdrKgNXa6g7rylf8Lsm7tPkiLbHlpPKkgM43/8tZaoojcpTT7coc9sv9GprTv/53VY76hdgtyGGQrTrH8LjO1AYoOqB2Ks9R3XR4VKPaUpiZq7548yawZVRDynDdazf4/6+DM8wPyw/LD+sa5oflOPPD8sPyw7qG+WE5zvyw/LBujZkedYaAddH6A4jD7P8Cnz9rwohUkQAAAABJRU5ErkJggg=="
+                />
+                <p class="section-filters__filter-desc"><strong>1.</strong> Set the amount of <strong>sunlight</strong> your plant will get.</p>
+              </div>
+      <div class="app-select" data-fragment="select" tabindex="0" data-field-slug="sunlight-select">
+        <select class="app-select__select-input" id="app-select-sunlight-select" name="sunlight-select">
+                    <option value="teste">No sunlight</option>
+                    <option value="testse">Low sunlight</option>
+                    <option value="testse">High sunlight</option>
         </select>
-        <label for="app-select-first" class="app-select__label">Select..</label>
+        <label for="app-select-sunlight-select" class="app-select__label">Select..</label>
         <div aria-hidden="true" class="app-select__arrow"></div>
         <ul aria-hidden="true" class="app-select__custom-options"></ul>
-      </div><div class="app-select" data-fragment="select" tabindex="0" data-field-slug="second">
-        <select class="app-select__select-input" id="app-select-second" name="second">
-                  <option value="1">10</option>
-                  <option value="2">20</option>
+      </div>      </li>
+      
+            <!-- Second selector -->
+            <li class="section-filters__filter">
+              <div class="section-filters__filter-info">
+                <img
+                  class="section-filters__mascot"
+                  src="/assets/wateringcan.2316db83.png"
+                />
+                <p class="section-filters__filter-desc"><strong>2.</strong> How often do you want to <strong>water</strong> your plant?</p>
+              </div>
+      <div class="app-select" data-fragment="select" tabindex="0" data-field-slug="water-select">
+        <select class="app-select__select-input" id="app-select-water-select" name="water-select">
+                    <option value="teste">Rarely</option>
+                    <option value="testse">Regularly</option>
+                    <option value="testse">Daily</option>
         </select>
-        <label for="app-select-second" class="app-select__label">Select..</label>
+        <label for="app-select-water-select" class="app-select__label">Select..</label>
         <div aria-hidden="true" class="app-select__arrow"></div>
         <ul aria-hidden="true" class="app-select__custom-options"></ul>
-      </div>    </div>
+      </div>      </li>
+      
+            <!-- Third selector -->
+            <li class="section-filters__filter">
+              <div class="section-filters__filter-info">
+                <img
+                  class="section-filters__mascot"
+                  src="/assets/dog.87218fc9.png"
+                />
+                <p class="section-filters__filter-desc"><strong>3.</strong> Do you have pets? Do they <strong>chew</strong> plants?</p>
+              </div>
+      <div class="app-select" data-fragment="select" tabindex="0" data-field-slug="chew-select">
+        <select class="app-select__select-input" id="app-select-chew-select" name="chew-select">
+                    <option value="teste">No/They don’t care</option>
+                    <option value="testse">Yes</option>
+        </select>
+        <label for="app-select-chew-select" class="app-select__label">Select..</label>
+        <div aria-hidden="true" class="app-select__arrow"></div>
+        <ul aria-hidden="true" class="app-select__custom-options"></ul>
+      </div>      </li>
+          </ul>
     </div></section>    <!--   
     
     <module href="fragments/sections/hero.html"></module> -->

@@ -19,8 +19,8 @@
 />
  -->
     
-    <script type="module" crossorigin src="/assets/index.2e235fcc.js"></script>
-    <link rel="stylesheet" href="/assets/index.38533d8c.css">
+    <script type="module" crossorigin src="/assets/index.ee10ec62.js"></script>
+    <link rel="stylesheet" href="/assets/index.662911e7.css">
   </head>
   <body data-fragment="body">
     <template id="plant-template">
@@ -216,11 +216,19 @@
     <div class="container">
           <div class="section-selectors__content">
       <div class="app-select" data-fragment="select" tabindex="0" data-field-slug="first">
-        <select class="app-select__select-input" name="first">
+        <select class="app-select__select-input" id="app-select-first" name="first">
                   <option value="teste">teste</option>
                   <option value="testse">tesase</option>
         </select>
-        <div class="app-select__label">Select..</div>
+        <label for="app-select-first" class="app-select__label">Select..</label>
+        <div class="app-select__arrow"></div>
+        <ul class="app-select__custom-options"></ul>
+      </div><div class="app-select" data-fragment="select" tabindex="0" data-field-slug="second">
+        <select class="app-select__select-input" id="app-select-second" name="second">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+        </select>
+        <label for="app-select-second" class="app-select__label">Select..</label>
         <div class="app-select__arrow"></div>
         <ul class="app-select__custom-options"></ul>
       </div>    </div>

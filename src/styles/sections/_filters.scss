@@ -1,5 +1,64 @@
 .section-filters {
+  background-color: var(--white);
+
   @include above(sm) {
     padding: 53px 0;
+  }
+
+  &__filters-list {
+    padding: 0 4px;
+    display: flex;
+    flex-direction: column;
+
+    @include above(m) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+  }
+
+  &__filter {
+    &:not(:first-of-type) {
+      margin-top: 50px;
+      @include above(m) {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+
+    @include above(m) {
+      max-width: 219px;
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  &--animate &__filter {
+    @include above(m) {
+      transform: translateY(0);
+      opacity: 1;
+
+      @for $i from 1 to 4 {
+        &:nth-child(#{$i}) {
+          transition: transform calc(0.2s + (#{$i} * 0.1s)) ease-out,
+            opacity calc(0.2s + (#{$i} * 0.1s)) ease-in;
+        }
+      }
+    }
+  }
+
+  &__mascot {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  &__filter-desc {
+    font-size: 14px;
+    font-weight: 22px;
+    color: var(--gray-two);
+    display: block;
+    margin-bottom: 24px;
   }
 }

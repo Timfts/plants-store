@@ -1,14 +1,52 @@
 <section class="section-filters" data-fragment="section-filters">
   {{#> common/container}}
-    <div class="section-selectors__content">
-      {{#> common/select name="first" fieldSlug="first"}}
-        <option value="teste">teste</option>
-        <option value="testse">tesase</option>
-      {{/common/select }}
-      {{#> common/select name="second" fieldSlug="second"}}
-        <option value="1">10</option>
-        <option value="2">20</option>
-      {{/common/select }}
-    </div>
+    <ul class="section-filters__filters-list">
+      <!-- First selector -->
+      <li class="section-filters__filter">
+        <div class="section-filters__filter-info">
+          <img
+            class="section-filters__mascot"
+            src="/static/images/mascots/sun.png"
+          />
+          <p class="section-filters__filter-desc"><strong>1.</strong> Set the amount of <strong>sunlight</strong> your plant will get.</p>
+        </div>
+        {{#> common/select name="sunlight-select" fieldSlug="sunlight-select"}}
+          <option value="teste">No sunlight</option>
+          <option value="testse">Low sunlight</option>
+          <option value="testse">High sunlight</option>
+        {{/common/select }}
+      </li>
+
+      <!-- Second selector -->
+      <li class="section-filters__filter">
+        <div class="section-filters__filter-info">
+          <img
+            class="section-filters__mascot"
+            src="/static/images/mascots/wateringcan.png"
+          />
+          <p class="section-filters__filter-desc"><strong>2.</strong> How often do you want to <strong>water</strong> your plant?</p>
+        </div>
+        {{#> common/select name="water-select" fieldSlug="water-select"}}
+          <option value="teste">Rarely</option>
+          <option value="testse">Regularly</option>
+          <option value="testse">Daily</option>
+        {{/common/select }}
+      </li>
+
+      <!-- Third selector -->
+      <li class="section-filters__filter">
+        <div class="section-filters__filter-info">
+          <img
+            class="section-filters__mascot"
+            src="/static/images/mascots/dog.png"
+          />
+          <p class="section-filters__filter-desc"><strong>3.</strong> Do you have pets? Do they <strong>chew</strong> plants?</p>
+        </div>
+        {{#> common/select name="chew-select" fieldSlug="chew-select"}}
+          <option value="teste">No/They don’t care</option>
+          <option value="testse">Yes</option>
+        {{/common/select }}
+      </li>
+    </ul>
   {{/common/container }}
 </section>

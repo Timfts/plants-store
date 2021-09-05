@@ -13,7 +13,7 @@ $select-border-radius: 19px;
   user-select: none;
 
   &--open {
-    border-bottom: none;
+    border-bottom: 1px solid transparent;
     border-radius: $select-border-radius $select-border-radius 0 0;
   }
 

@@ -9,6 +9,7 @@ export default elementController("select", ({ on, root, query, emit }) => {
 
   on("click", _handleSelectClick);
   on("blur", _closeOptions);
+  on("change", _handleNativeSelectChange);
 
   (function hydrateVirtualOptions() {
     if (nativeSelect instanceof HTMLElement) {
@@ -59,12 +60,23 @@ export default elementController("select", ({ on, root, query, emit }) => {
     if (!!label) {
       label.innerHTML = labelValue;
     }
+    const newValue = String(optionValue);
     if (nativeSelect instanceof HTMLSelectElement) {
-      const newValue = String(optionValue);
-      const fieldSlug = root?.dataset?.fieldSlug;
       nativeSelect.value = newValue;
-      emit("selectChange", { slug: fieldSlug, value: newValue });
-      _closeOptions();
     }
+    _emitSelectChange(newValue);
+    _closeOptions();
+  }
+
+  /** @param {{target: HTMLSelectElement}} target */
+  function _handleNativeSelectChange({ target }) {
+    const value = target?.value;
+    _emitSelectChange(value);
+  }
+
+  /** @param {string} newValue */
+  function _emitSelectChange(newValue) {
+    const fieldSlug = root?.dataset?.fieldSlug;
+    emit("selectChange", { slug: fieldSlug, value: newValue });
   }
 });

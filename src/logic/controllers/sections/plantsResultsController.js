@@ -6,38 +6,87 @@ import {
 } from "../../helpers/display-empty-results";
 import getPlantsList from "../../services/plans-api";
 
-export default elementController("section-plants-results", ({ root }) => {
-  const visibleResultsSectionClass = "section-plants-results--visible";
+/** @typedef {import('../../entities/Plant').default} Plant */
 
-  (function listenForSelection() {
-    window.addEventListener("user-selected-values", _handleOnSelectFilters);
-  })();
+export default elementController(
+  "section-plants-results",
+  ({ root, query }) => {
+    const visibleResultsSectionClass = "section-plants-results--visible";
+    const cardsHolder = query(".section-plants-results__cards-holder");
 
-  async function _handleOnSelectFilters(e) {
-    const {
-      "sunlight-select": sunlight,
-      "water-select": water,
-      "chew-select": chew,
-    } = e?.detail;
+    (function listenForSelection() {
+      window.addEventListener("user-selected-values", _handleOnSelectFilters);
+    })();
 
-    const plants = await getPlantsList({ sunlight, water, chew });
-    const hasPlants = !!plants.length;
+    async function _handleOnSelectFilters(e) {
+      const {
+        "sunlight-select": sunlight,
+        "water-select": water,
+        "chew-select": chew,
+      } = e?.detail;
 
-    if (hasPlants) {
-      hideEmptyResultsSection();
-      _makeResultsVisible();
-    } else {
-      showEmptyResultsSection();
-      _makeResultsHide();
+      const plants = await getPlantsList({ sunlight, water, chew });
+      const hasPlants = !!plants.length;
+
+      if (hasPlants) {
+        hideEmptyResultsSection();
+        _renderCards(plants);
+        _makeResultsVisible();
+        root.scrollIntoView()
+      } else {
+        showEmptyResultsSection();
+        _makeResultsHide();
+      }
+      
     }
-    scrollToBottom();
-  }
 
-  function _makeResultsVisible() {
-    root.classList.add(visibleResultsSectionClass);
-  }
+    function _makeResultsVisible() {
+      root.classList.add(visibleResultsSectionClass);
+    }
 
-  function _makeResultsHide() {
-    root.classList.remove(visibleResultsSectionClass);
+    function _makeResultsHide() {
+      root.classList.remove(visibleResultsSectionClass);
+    }
+
+    /** @param {Plant[]} plants  */
+    function _renderCards(plants) {
+      if (!!cardsHolder) {
+        cardsHolder.innerHTML = plants
+          .sort((plant) => (plant.staffFavorite ? -1 : 1)) //put staff favorite first
+          .map((plant) => _plantCardMarkup(plant))
+          .join("\n");
+      }
+    }
+
+    /** @param {Plant} plant */
+    function _plantCardMarkup(plant) {
+      const isStaffFavorite = !!plant.staffFavorite;
+      const mainClass = "plant-card";
+      const favoriteClass = isStaffFavorite ? `${mainClass}--favorite` : "";
+      const elementClass = `${mainClass} ${favoriteClass}`;
+      const title = `<h2 class="plant-card__title">${plant.name}</h2>`;
+
+      return `
+        <div class=${elementClass}>
+          ${
+            isStaffFavorite
+              ? '<div class="plant-card__staff-favorite-flag"><h3>✨ Staff favorite</h3></div>'
+              : ""
+          }
+          <div class="plant-card__image-holder">
+            <img src="${plant.url}" alt="plant image" />
+          </div>
+          ${!isStaffFavorite ? title : ""}
+          <div class="plant-card__desc">
+            <div class="plant-card__left">
+              ${isStaffFavorite ? title : ""}
+            </div>
+            <div class="plant-card__right">
+              <p>${plant.formattedPrice}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
   }
-});
+);

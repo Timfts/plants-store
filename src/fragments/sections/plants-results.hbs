@@ -1,4 +1,8 @@
-<section class="section-plants-results" data-fragment="section-plants-results">
+<section 
+  class="section-plants-results" 
+  data-fragment="section-plants-results" 
+  id="plants-results"
+>
   {{#> common/container}}
     <div class="section-plants-results__text-content">
       <img
@@ -10,5 +14,9 @@
       />
       <h1 class="section-plants-results__title">Our picks for you</h1>
     </div>
+  {{/common/container}}
+
+  {{#> common/container customClass="section-plants-results__cards-container"}}
+    <main class="section-plants-results__cards-holder"></main>
   {{/common/container}}
 </section>

@@ -2,7 +2,6 @@
   display: none;
   background-color: var(--gray-one);
   padding: 32px 0 22px 0;
-  min-height:50vh;
 
   &--visible {
     display: block;
@@ -33,6 +32,30 @@
       margin-top: 20px;
       font-size: 55px;
       line-height: 67.05px;
+    }
+  }
+
+  &__cards-container {
+    @include below(m) {
+      padding: 0;
+      padding-left: 34px;
+    }
+  }
+
+  &__cards-holder {
+    display: flex;
+    padding-top: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-stop: always;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include above(m) {
+      padding: 0;
     }
   }
 }

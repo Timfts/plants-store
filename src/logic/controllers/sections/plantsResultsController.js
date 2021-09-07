@@ -32,12 +32,12 @@ export default elementController(
         hideEmptyResultsSection();
         _renderCards(plants);
         _makeResultsVisible();
-        root.scrollIntoView()
+        root.scrollIntoView();
       } else {
         showEmptyResultsSection();
         _makeResultsHide();
+        scrollToBottom();
       }
-      
     }
 
     function _makeResultsVisible() {
@@ -76,13 +76,16 @@ export default elementController(
           <div class="plant-card__image-holder">
             <img src="${plant.url}" alt="plant image" />
           </div>
-          ${!isStaffFavorite ? title : ""}
-          <div class="plant-card__desc">
-            <div class="plant-card__left">
-              ${isStaffFavorite ? title : ""}
-            </div>
-            <div class="plant-card__right">
-              <p>${plant.formattedPrice}</p>
+          <div class="plant-card__text-content">
+            ${!isStaffFavorite ? title : ""}
+            <div class="plant-card__desc">
+              <div class="plant-card__left">
+                ${isStaffFavorite ? title : ""}
+                <p class="plant-card__price">${plant.formattedPrice}</p>
+              </div>
+              <div class="plant-card__right">
+                
+              </div>
             </div>
           </div>
         </div>

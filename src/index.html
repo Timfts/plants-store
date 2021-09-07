@@ -3,19 +3,15 @@
   <head>
     {{> common/meta }}
     <title>Greenthumb</title>
-    <!-- {{> common/third-party }} -->
     <link rel="stylesheet" href="./styles/main.scss" />
   </head>
   <body data-fragment="body">
-    {{> common/templates test="cebola" }}
     {{> common/icons-sprite}}
 
     {{> sections/hero}}
     {{> sections/filters}}
-    <!--   
-    
-    <module href="fragments/sections/hero.html"></module> -->
-
+    {{> sections/no-results}}
+  
     <script type="module" src="./logic/main.js"></script>
   </body>
 </html>

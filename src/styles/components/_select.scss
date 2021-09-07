@@ -2,14 +2,14 @@ $select-border-radius: 19px;
 
 .app-select {
   width: 100%;
-  border: 1px solid var(--gray-one);
+  border: 1px solid var(--gray-three);
   border-radius: $select-border-radius;
   position: relative;
   font-size: 14px;
   padding: 7px 18px;
   background-color: var(--white);
   cursor: pointer;
-  color: var(--gray-one);
+  color: var(--gray-three);
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 
@@ -38,7 +38,7 @@ $select-border-radius: 19px;
     left: -1px;
     width: calc(100% + 2px);
     transition: transform 0.3s ease, opacity 0.3s ease;
-    border: 1px solid var(--gray-one);
+    border: 1px solid var(--gray-three);
     border-top: none;
     border-radius: 0 0 $select-border-radius $select-border-radius;
     background-color: var(--white);
@@ -64,7 +64,7 @@ $select-border-radius: 19px;
       display: block;
       width: 50%;
       height: 1px;
-      background-color: var(--gray-one);
+      background-color: var(--gray-three);
       position: absolute;
       bottom: 0;
       transition: transform 0.2s ease;

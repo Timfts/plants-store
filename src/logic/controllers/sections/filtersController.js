@@ -1,15 +1,16 @@
 import { elementController } from "../../core";
 import { isMobile } from "../../helpers/screen";
 
-const test = {};
+const searchValues = {
+  "sunlight-select": "",
+  "water-select": "",
+  "chew-select": "",
+};
 
-export default elementController("section-filters", ({ on, root }) => {
+export default elementController("section-filters", ({ on, root, emit }) => {
   const animateClassModifier = "section-filters--animate";
 
-  on("selectChange", (e) => {
-    test[e?.detail?.slug] = e?.detail?.value;
-    makeRequest();
-  });
+  on("selectChange", _changeSelectionHandler);
 
   (function setupAnimation() {
     if (!isMobile) {
@@ -25,7 +26,21 @@ export default elementController("section-filters", ({ on, root }) => {
     window.removeEventListener("load", _onLoadingWindowHandler);
   }
 
-  function makeRequest() {
-    console.log(test);
+  function _changeSelectionHandler(e) {
+    searchValues[e?.detail?.slug] = e?.detail?.value;
+    const selectedAllFields = _selectedAllValues();
+
+    if (selectedAllFields) {
+      emit("user-selected-values", searchValues);
+    }
+  }
+
+  /** @returns {boolean} */
+  function _selectedAllValues() {
+    const searchKeys = Object.keys(searchValues);
+    const hasThreeValues = searchKeys.length === 3;
+    const allKeysHasValues = searchKeys.every((key) => !!searchValues[key]);
+
+    return hasThreeValues && allKeysHasValues;
   }
 });

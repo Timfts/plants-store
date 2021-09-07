@@ -2,6 +2,10 @@
   background-color: var(--gray-one);
   padding: 47px 0 31px 0;
 
+  &--hide {
+    display: none;
+  }
+
   @include above(m) {
     padding: 52px 0 67px 0;
   }

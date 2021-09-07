@@ -1,5 +1,5 @@
 import { elementController } from "../../core";
-import { scrollToBottom } from "../../helpers/scroll";
+import { scrollToBottom, scrollToTop } from "../../helpers/scroll";
 import {
   hideEmptyResultsSection,
   showEmptyResultsSection,
@@ -10,13 +10,23 @@ import getPlantsList from "../../services/plans-api";
 
 export default elementController(
   "section-plants-results",
-  ({ root, query }) => {
+  ({ root, query, on }) => {
     const visibleResultsSectionClass = "section-plants-results--visible";
     const cardsHolder = query(".section-plants-results__cards-holder");
+    const goToTopButton = query("#go-back-btn");
 
     (function listenForSelection() {
       window.addEventListener("user-selected-values", _handleOnSelectFilters);
     })();
+
+    on("click", _handleSectionClick);
+
+    function _handleSectionClick(e) {
+      const target = e?.target;
+      const isGoToTopButton = goToTopButton?.contains(target);
+
+      if (isGoToTopButton) scrollToTop();
+    }
 
     async function _handleOnSelectFilters(e) {
       const {

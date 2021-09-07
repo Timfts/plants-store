@@ -1,0 +1,13 @@
+<button 
+  class="app-button {{#if customClass}} {{customClass}} {{/if}} {{#if expand}} app-button--expand {{/if}}"
+  {{#if id}}id={{id}}{{/if}}
+>
+  {{#if icon}}
+    <div class="app-button__icon">
+      {{> common/icon icon=icon}}
+    </div>
+  {{/if}}
+  <div class="app-button__content">
+    {{> @partial-block }}
+  </div>
+</button>

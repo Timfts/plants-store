@@ -63,4 +63,12 @@
       margin-top: 54px;
     }
   }
+
+  &__button-holder {
+    padding-top: 32px;
+
+    @include above(m) {
+      padding-top: 59px;
+    }
+  }
 }

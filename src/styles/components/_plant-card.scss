@@ -13,6 +13,21 @@
   overflow: hidden;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  cursor: pointer;
+
+  @include above(m) {
+    width: auto;
+    margin-right: 0;
+    height: 245px;
+  }
+
+  &--favorite {
+    @include above(m) {
+      grid-column: span 2;
+      grid-row: span 2;
+      height: auto;
+    }
+  }
 
   &__staff-favorite-flag {
     position: absolute;
@@ -32,12 +47,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
     margin-bottom: 18px;
 
     img {
       height: 100%;
     }
+  }
+
+  &__desc {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__title,
@@ -46,5 +65,56 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 28px;
+  }
+
+  &__title {
+    margin-bottom: 6px;
+  }
+
+  &--favorite &__title {
+    @include above(m) {
+      font-size: 35px;
+      line-height: 37px;
+      max-width: 200px;
+      margin-bottom: 0;
+    }
+  }
+
+  &--favorite &__price {
+    @include above(m) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  &--favorite &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__icon {
+    height: 20px;
+    width: 25px;
+
+    &:not(:last-of-type) {
+      margin-right: 8px;
+    }
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &--favorite &__icon {
+    width: 34px;
+    height: 26px;
   }
 }

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 4,
+    "name": "Ficus lyrata",
+    "sun": "high",
+    "water": "regularly",
+    "url": "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/ficus-lyrata.png",
+    "price": 30,
+    "toxicity": false,
+    "staff_favorite": false
+  },
+  {
+    "id": 5,
+    "name": "Bamboo",
+    "sun": "low",
+    "url": "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/lucky-bamboo.png",
+    "water": "regularly",
+    "price": 15,
+    "toxicity": false,
+    "staff_favorite": false
+  },
+  {
+    "id": 6,
+    "name": "Ponytail Palm",
+    "sun": "low",
+    "water": "regularly",
+    "url": "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/ponytail-palm.png",
+    "price": 50,
+    "toxicity": false,
+    "staff_favorite": false
+  },
+  {
+    "id": 7,
+    "name": "Pilea peperomioides",
+    "sun": "no",
+    "url": "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/pilea-peperomioides.png",
+    "water": "regularly",
+    "price": 50,
+    "toxicity": true,
+    "staff_favorite": false
+  },
+  {
+    "id": 8,
+    "name": "Calathea triostar",
+    "sun": "no",
+    "water": "daily",
+    "url": "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/calathea-triostar.png",
+    "price": 50,
+    "toxicity": true,
+    "staff_favorite": false
+  },
+  {
+    "id": 9,
+    "name": "Monstera deliciosa",
+    "sun": "no",
+    "url": "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/monstera-deliciosa.png",
+    "water": "daily",
+    "price": 50,
+    "toxicity": true,
+    "staff_favorite": true
+  }
+]

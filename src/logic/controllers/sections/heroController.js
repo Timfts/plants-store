@@ -7,12 +7,11 @@ export default elementController("section-hero", ({ root, on, query }) => {
 
   on("mousemove", _parallaxHandler);
   on("click", _clickHandler);
+  on("global:load", _animationHandler);
 
-  (function setAnimation() {
-    window.addEventListener("load", () => {
-      root.classList.add("section-hero--animate");
-    });
-  })();
+  function _animationHandler() {
+    root.classList.add("section-hero--animate");
+  }
 
   /** @param {MouseEvent} e */
   function _parallaxHandler(e) {

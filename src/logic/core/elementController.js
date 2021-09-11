@@ -18,7 +18,14 @@ function elementController(fragmentName, builderFunction) {
     elementInstances.forEach((element) => {
       /** @type {import("./types").ControllerEventHandler}  */
       function on(eventName, handler) {
-        element.addEventListener(eventName, handler);
+        const globalEventDirective = "global:";
+        const isGlobalEvent = eventName.startsWith(globalEventDirective);
+        const eventRoot = isGlobalEvent ? window : element;
+        const formattedEventName = isGlobalEvent
+          ? eventName.replace(globalEventDirective, "")
+          : eventName;
+
+        eventRoot.addEventListener(formattedEventName, handler);
       }
 
       /** @type {import("./types").Queryfunction} */

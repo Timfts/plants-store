@@ -14,7 +14,7 @@ export default elementController("section-filters", ({ on, root, emit }) => {
 
   (function setupAnimation() {
     if (!isMobile) {
-      window.addEventListener("load", _onLoadingWindowHandler);
+      on("global:load", _onLoadingWindowHandler);
     }
   })();
 
@@ -40,7 +40,6 @@ export default elementController("section-filters", ({ on, root, emit }) => {
     const searchKeys = Object.keys(searchValues);
     const hasThreeValues = searchKeys.length === 3;
     const allKeysHasValues = searchKeys.every((key) => !!searchValues[key]);
-
     return hasThreeValues && allKeysHasValues;
   }
 });

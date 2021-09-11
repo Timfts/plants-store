@@ -15,11 +15,8 @@ export default elementController(
     const cardsHolder = query(".section-plants-results__cards-holder");
     const goToTopButton = query("#go-back-btn");
 
-    (function listenForSelection() {
-      window.addEventListener("user-selected-values", _handleOnSelectFilters);
-    })();
-
     on("click", _handleSectionClick);
+    on("global:user-selected-values", _handleOnSelectFilters)
 
     function _handleSectionClick(e) {
       const target = e?.target;

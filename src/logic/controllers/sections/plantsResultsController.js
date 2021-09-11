@@ -35,36 +35,52 @@ export default elementController(
         "chew-select": chew,
       } = e?.detail;
 
+      hideEmptyResultsSection();
+      _makeResultsContainerVisible();
+      _renderSkeletonLoader();
+      root.scrollIntoView();
+
       const plants = await getPlantsList({ sunlight, water, chew });
       const hasPlants = !!plants.length;
 
       if (hasPlants) {
-        hideEmptyResultsSection();
-        _renderCards(plants);
-        _makeResultsVisible();
-        root.scrollIntoView();
+        _renderPlantsCards(plants);
       } else {
         showEmptyResultsSection();
-        _makeResultsHide();
+        _makeResultsContainerHide();
         scrollToBottom();
       }
     }
 
-    function _makeResultsVisible() {
+    function _makeResultsContainerVisible() {
       root.classList.add(visibleResultsSectionClass);
     }
 
-    function _makeResultsHide() {
+    function _makeResultsContainerHide() {
       root.classList.remove(visibleResultsSectionClass);
     }
 
     /** @param {Plant[]} plants  */
-    function _renderCards(plants) {
+    function _renderPlantsCards(plants) {
       if (!!cardsHolder) {
         cardsHolder.innerHTML = plants
           .sort((plant) => (plant.staffFavorite ? -1 : 1)) //put staff favorite first
           .map((plant) => _plantCardMarkup(plant))
           .join("\n");
+      }
+    }
+
+    function _renderSkeletonLoader() {
+      const itemsNumber = 10;
+      const template = [...Array(itemsNumber)]
+        .map((_, i) => {
+          const favoriteClass = i === 0 ? "plant-card--favorite" : "";
+          return `<div class="plant-card ${favoriteClass} skeleton"></div>`;
+        })
+        .join("\n");
+
+      if (!!cardsHolder) {
+        cardsHolder.innerHTML = template;
       }
     }
 

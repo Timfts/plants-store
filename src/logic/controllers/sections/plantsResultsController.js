@@ -110,31 +110,22 @@ export default elementController(
       const mainClass = "plant-card";
       const favoriteClass = isStaffFavorite ? `${mainClass}--favorite` : "";
       const elementClass = `${mainClass} ${favoriteClass}`;
-      const title = `<h2 class="plant-card__title">${plant.name}</h2>`;
-      const price = `<p class="plant-card__price">${plant.formattedPrice}</p>`;
+      const staffFavoriteFlag = isStaffFavorite
+        ? '<div class="plant-card__staff-favorite-flag"><h3>✨ Staff favorite</h3></div>'
+        : "";
 
       return `
         <div class="${elementClass}">
-          ${
-            isStaffFavorite
-              ? '<div class="plant-card__staff-favorite-flag"><h3>✨ Staff favorite</h3></div>'
-              : ""
-          }
+          ${staffFavoriteFlag}
           <div class="plant-card__image-holder">
-            <img src="${plant.url}" alt="plant image" />
+            <img src="${plant.url}" alt="${plant.name} plant image" />
           </div>
           <div class="plant-card__text-content">
-            ${!isStaffFavorite ? title : ""}
+            <h2 class="plant-card__title">${plant.name}</h2>
             <div class="plant-card__desc">
-              <div class="plant-card__left">
-                ${isStaffFavorite ? title : ""}
-                ${!isStaffFavorite ? price : ""}
-              </div>
-              <div class="plant-card__right">
-                ${isStaffFavorite ? price : ""}
-                <div class="plant-card__icons">
-                  ${_getIcons(plant)}
-                </div>
+              <p class="plant-card__price">${plant.formattedPrice}</p>
+              <div class="plant-card__icons">
+                ${_getIcons(plant)}
               </div>
             </div>
           </div>

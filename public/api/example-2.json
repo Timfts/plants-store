@@ -1,0 +1,32 @@
+[
+  {
+    "id": 7,
+    "name": "Pilea peperomioides",
+    "sun": "no",
+    "url": "/images/plants/pilea-peperomioides.png",
+    "water": "regularly",
+    "price": 50,
+    "toxicity": true,
+    "staff_favorite": false
+  },
+  {
+    "id": 8,
+    "name": "Calathea triostar",
+    "sun": "no",
+    "water": "daily",
+    "url": "/images/plants/calathea-triostar.png",
+    "price": 50,
+    "toxicity": true,
+    "staff_favorite": false
+  },
+  {
+    "id": 9,
+    "name": "Monstera deliciosa",
+    "sun": "no",
+    "url": "/images/plants/monstera-deliciosa.png",
+    "water": "daily",
+    "price": 50,
+    "toxicity": true,
+    "staff_favorite": true
+  }
+]

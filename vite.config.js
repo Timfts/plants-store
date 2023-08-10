@@ -5,7 +5,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   root: "src/",
-  publicDir: "public/",
+  publicDir: "../public/",
   build: {
     outDir: "../dist",
   },

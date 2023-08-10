@@ -4,7 +4,7 @@ import {
   hideEmptyResultsSection,
   showEmptyResultsSection,
 } from "../../helpers/display-empty-results";
-import getPlantsList from "../../services/plans-api";
+import getPlantsList from "../../services/plants-api";
 
 /** @typedef {import('../../entities/Plant').default} Plant */
 

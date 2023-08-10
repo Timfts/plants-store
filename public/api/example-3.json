@@ -1,0 +1,22 @@
+[
+  {
+    "id": 5,
+    "name": "Bamboo",
+    "sun": "low",
+    "url": "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/lucky-bamboo.png",
+    "water": "regularly",
+    "price": 15,
+    "toxicity": false,
+    "staff_favorite": false
+  },
+  {
+    "id": 6,
+    "name": "Ponytail Palm",
+    "sun": "low",
+    "water": "regularly",
+    "url": "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/ponytail-palm.png",
+    "price": 50,
+    "toxicity": false,
+    "staff_favorite": false
+  }
+]

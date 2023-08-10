@@ -17,7 +17,7 @@ class Plant {
     this.toxicity = toxicity;
     this.url = url;
     this.water = water;
-    this.formattedPrice = `$${price}`
+    this.formattedPrice = `$${price}`;
   }
 }
 

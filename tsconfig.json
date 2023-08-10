@@ -2,9 +2,11 @@
   "compilerOptions": {
     "module": "commonjs",
     "checkJs": true,
+    "target": "ESNext",
+    
     "strict": true,
     "baseUrl": "./src",
-    "esModuleInterop": true  ,
+    "esModuleInterop": true,
     "outDir": "dist",
     "noImplicitAny": false
   }

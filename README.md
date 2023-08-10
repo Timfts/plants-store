@@ -1,6 +1,6 @@
 ## Plants store app
 
-This project has been made as an personal case study to explore vanilla web technologies and some motion design experimentation.
+This project has been made as a personal case study to explore vanilla web technologies and some motion design experimentation.
 
 - handlebars has been used to split html templates
 

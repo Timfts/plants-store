@@ -8,6 +8,7 @@ export default defineConfig({
   publicDir: "../public/",
   build: {
     outDir: "../dist",
+    sourcemap: true
   },
   plugins: [handlebars({
     partialDirectory: resolve(__dirname, 'src/fragments'),
